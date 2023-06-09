@@ -9,17 +9,21 @@ import { Container, Row, Col } from "react-bootstrap";
 import Video from "../components/video";
 import promoVideo from "../video/Joop Gilliamse - Kleinste oudercreche van Nederland.mp4";
 import { Link } from "gatsby";
+import { LanguageContext } from "../context/LanguageProvider";
+import { useContext } from "react";
 
 export default function Home({ data }) {
+  const { getTranslation } = useContext(LanguageContext);
+
   return (
     <>
       <Header data={data} landing />
       <Cover backgroundColour="bg-light" data={data}>
-        <Row className="mw-70 mx-auto h-75 px-5 px-xs-3">
+        <Row className="mw-70 mx-auto h-75 px-5">
           <Col md={6} className="align-self-center p-4 pe-5">
-            <h1>A Parent-led Creche in the Centre of Amsterdam</h1>
+            <h1>{getTranslation("home_title")}</h1>
 
-            <h3>Open since 1982.</h3>
+            <h3>{getTranslation("home_subtitle")}</h3>
           </Col>
           <Col md={6} className="my-3 align-self-center">
             <Video source={promoVideo} />
@@ -43,7 +47,8 @@ export default function Home({ data }) {
             </Row>
             <Row xs={12}>
               <h2>
-                Want to visit? <Link to="contact">Contact us.</Link>
+                {getTranslation("cta_title")}{" "}
+                <Link to="contact"> {getTranslation("cta_action")}</Link>
               </h2>
             </Row>
           </div>

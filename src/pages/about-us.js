@@ -4,35 +4,29 @@ import Header from "../components/header";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Accordion from "react-bootstrap/Accordion";
 import { Container } from "react-bootstrap";
+import { LanguageContext } from "../context/LanguageProvider";
+import { useContext } from "react";
 
-export default function OurStory({ data }) {
+export default function AboutUs({ data }) {
+  const { getTranslation } = useContext(LanguageContext);
+
   return (
     <>
       <Header />
       <div className="ourStory p-3" backgroundColour="bg-success" data={data}>
         <Container className="mw-60">
           <div className="aboutUsWrapper">
-            <h1 className="mt-4">Our Story</h1>
-            <p className="mt-4 text-left">
-              The Joop Gilliamse parent participation crèche is the smallest
-              parent participation crèche in the Netherlands and is named after
-              the first boy who took part in this special form of childcare in
-              1982.
-            </p>
+            <h1 className="mt-4">{getTranslation("about_us_title")}</h1>
+            <p className="mt-4 text-left">{getTranslation("our_story_one")}</p>
             <GatsbyImage
               className="mx-auto"
               image={data.oudeFoto.childImageSharp.gatsbyImageData}
             />
 
-            <p className="mt-4 text-left">
-              The association was set up for and by parents to allow their
-              children to grow up, learn and live together in a crèche. to play.
-            </p>
+            <p className="mt-4 text-left">{getTranslation("our_story_two")} </p>
 
             <p className="my-4 text-left">
-              The crèche is registered with the Chamber of Commerce and has a
-              board consisting of a chairman, a treasurer and possibly a
-              secretary, who are also participating parents at the crèche.
+              {getTranslation("our_story_three")}
             </p>
           </div>
         </Container>
@@ -44,82 +38,45 @@ export default function OurStory({ data }) {
         data={data}
       >
         <Container>
-          <h1 className="mt-4">FAQs</h1>
+          <h1 className="mt-4">{getTranslation("faqs")}</h1>
 
           <Accordion className="my-5" defaultActiveKey="0">
             <Accordion.Item eventKey="0">
-              <Accordion.Header>
-                Is there a minimum age to join?
-              </Accordion.Header>
-              <Accordion.Body>
-                Joop Gilliamse is for children between 1 and 4 years old.
-                Children joining the creche are expected to be able to walk.
-              </Accordion.Body>
+              <Accordion.Header>{getTranslation("faqs_one")}</Accordion.Header>
+              <Accordion.Body>{getTranslation("faqs_one_a")} </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
-              <Accordion.Header>
-                How much time should I expect to dedicate to the creche?
-              </Accordion.Header>
-              <Accordion.Body>
-                Parents are expected to be available one day a week to care for
-                the children. Eech parent has a fixed task in addition to weekly
-                shift. Think of: treasurer, chairman, grocery shopping,
-                management of registrations, maintenance of the garden etc. In
-                addition, there are monthly meetings done usually online and
-                sometimes in person. Occasionally there are "DIY days" and
-                Parties.
-              </Accordion.Body>
+              <Accordion.Header>{getTranslation("faqs_two")}</Accordion.Header>
+              <Accordion.Body>{getTranslation("faqs_two_a")}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2">
               <Accordion.Header>
-                Can I share my responsibilities at the creche with my partner?
+                {getTranslation("faqs_three")}
               </Accordion.Header>
-              <Accordion.Body>
-                Yes. Both parents, where possible, are encouraged to partake in
-                creche life, however it is not also necessary.
-              </Accordion.Body>
+              <Accordion.Body>{getTranslation("faqs_three_a")}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="3">
-              <Accordion.Header>Can I apply for toeslag?</Accordion.Header>
-              <Accordion.Body>
-                U heeft ook recht op het aanvragen van kinderopvangtoeslag omdat
-                de Joop Gilliamse een volledig erkende crèche is (GGD).
-              </Accordion.Body>
+              <Accordion.Header>{getTranslation("faqs_four")}</Accordion.Header>
+              <Accordion.Body>{getTranslation("faqs_four_a")}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="4">
-              <Accordion.Header>When is the creche open?</Accordion.Header>
-              <Accordion.Body>
-                The creche is open Monday, Tuesday, Thursday and Friday between
-                9:00 - 16:00. The Joop Gilliamse uses the same vacation days as
-                a primary school (in North Holland): Please note that the
-                parental contribution will continue to be paid during the
-                holidays (including the summer holidays).
-              </Accordion.Body>
+              <Accordion.Header>{getTranslation("faqs_five")}</Accordion.Header>
+              <Accordion.Body>{getTranslation("faqs_five_a")}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="5">
-              <Accordion.Header>Are you inspected?</Accordion.Header>
-              <Accordion.Body>
-                De Joop Gilliamse oudercrèche is volledig erkend door de GGD en
-                wordt frequent gekeurd door de brandweer. Alle ouders beschikken
-                over een recent EHBO diploma en hebben allen een verklaring voor
-                goed gedrag.
-              </Accordion.Body>
+              <Accordion.Header>{getTranslation("faqs_six")}</Accordion.Header>
+              <Accordion.Body>{getTranslation("faqs_six_a")}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="6">
               <Accordion.Header>
-                Do I need to be able to communicate in Dutch?
+                {getTranslation("faqs_seven")}
               </Accordion.Header>
-              <Accordion.Body>
-                The communication with the children at the creche is in Dutch.
-              </Accordion.Body>
+              <Accordion.Body>{getTranslation("faqs_seven_a")} </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Container>
       </div>
-      <div
-        className="aboutUsSection p-3"
-        data={data}
-      >
+      <div className="aboutUsSection p-3" data={data}>
         {" "}
         <Container className="mw-60">
           {" "}

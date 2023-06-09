@@ -1,11 +1,9 @@
 import React, { createContext, useState } from "react";
-// import en from './en.json';
-// import nl from './nl.json';
+import { translations } from "../text/translations";
 
 // create the context object
 export const LanguageContext = createContext();
 
-// create a provider component to provide the language state to children components
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("en");
 
@@ -13,8 +11,14 @@ export const LanguageProvider = ({ children }) => {
     setLanguage(language === "en" ? "nl" : "en");
   };
 
+  const getTranslation = (key) => {
+    return translations[language][key] || key; // If translation is not available, return the key itself
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, toggleLanguage, getTranslation }}
+    >
       {children}
     </LanguageContext.Provider>
   );

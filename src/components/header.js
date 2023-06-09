@@ -9,9 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Bird from "./bird";
 
-export default function Header({ landing, data }) {
+export default function Header({ landing }) {
   const location = useLocation();
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const { getTranslation } = useContext(LanguageContext);
+
   return (
     <header className="bg-red sticky-top header-links position-relative">
       {landing && (
@@ -21,7 +23,7 @@ export default function Header({ landing, data }) {
       )}
       <Container>
         <Navbar
-          className="justify-content-space-between mw-70 mx-auto"
+          className="justify-content-space-between mw-60 mx-auto"
           expand="lg"
         >
           <Navbar.Brand>Joop Gilliamse</Navbar.Brand>
@@ -39,7 +41,7 @@ export default function Header({ landing, data }) {
                 eventKey="/"
                 active={location.pathname === "/"}
               >
-                Home
+                {getTranslation("nav_home")}
               </Nav.Link>
               <Nav.Link
                 as={Link}
@@ -47,7 +49,7 @@ export default function Header({ landing, data }) {
                 eventKey="/about-us"
                 active={location.pathname === "/about-us/"}
               >
-                About Us
+                {getTranslation("nav_about")}
               </Nav.Link>
               <Nav.Link
                 as={Link}
@@ -55,7 +57,7 @@ export default function Header({ landing, data }) {
                 eventKey="/contact"
                 active={location.pathname === "/contact/"}
               >
-                Contact
+                {getTranslation("nav_contact")}
               </Nav.Link>
               <ButtonGroup className="nav-link ms-lg-5">
                 <Button
