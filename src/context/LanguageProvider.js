@@ -1,7 +1,6 @@
 import React, { createContext, useState } from "react";
 import { translations } from "../text/translations";
 
-// create the context object
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
@@ -12,7 +11,7 @@ export const LanguageProvider = ({ children }) => {
   };
 
   const getTranslation = (key) => {
-    return translations[language][key] || key; // If translation is not available, return the key itself
+    return translations[language][key] || key;
   };
 
   return (
