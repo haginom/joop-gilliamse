@@ -16,10 +16,11 @@ const Video = ({ source }) => {
   };
   return (
     <Container
+      className="video-container"
       style={{
         position: "relative",
         marginTop: "0rem",
-        transform: "rotate(2deg)",
+        transform: "rotate(3deg)",
       }}
     >
       <div style={{ position: "relative", maxWidth: "140vh" }}>
@@ -38,7 +39,7 @@ const Video = ({ source }) => {
           />
         )}
         <div className="pokingBird">
-          <Bird color="cls-0" border="cls-2" />
+          <Bird color="cls-0" border="cls-01" />
         </div>
         <div style={{ width: "100%" }}>
           <video

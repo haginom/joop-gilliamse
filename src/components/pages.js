@@ -1,20 +1,14 @@
 import * as React from "react";
-import "../styles/layout.scss";
 import { useEffect, useRef } from "react";
-import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Cover({
-  id,
-  children,
-  backgroundColour,
-  addClass,
-  header,
+export default function PageContainer({
   scrollTo,
   goToSectionRef,
   showArrow,
+  children,
 }) {
   const headlineRef = useRef();
   const sectionRef = useRef();
@@ -42,16 +36,12 @@ export default function Cover({
     return () => {};
   }, []);
   return (
-    <Container
-      ref={sectionRef}
-      fluid
-      id={id}
-      className={`hero padding-large w-100 h-100 d-flex flex-column text-center  ${backgroundColour} ${addClass} ${
-        header && `waves`
-      }`}
-    >
+    <div className="page-container" ref={sectionRef}>
       {children}
-      {showArrow && <button onClick={() => scrollTo(goToSectionRef)}></button>}
-    </Container>
+      <button
+        className={`downarrow ${!showArrow && `up`}`}
+        onClick={() => scrollTo(goToSectionRef)}
+      ></button>
+    </div>
   );
 }

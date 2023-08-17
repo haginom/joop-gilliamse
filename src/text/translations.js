@@ -12,7 +12,7 @@ export const translations = {
     cards_four: "8 families",
     cards_five: "180 euro per maand",
     cards_six: "bestaat sinds 1982",
-    reasons_title: "waarom meedoen??",
+    reasons_title: "waarom meedoen?",
     reasons_one_title: "een bijzondere gemeenschap",
     reasons_one_text:
       "Wordt onderdeel van een warm en vriendelijk netwerk van gelijkgestemde ouders en ondervind steun en vriendschap. We trekken buiten de creche ook op met elkaar, wat ervoor zorgt dat we een hecht team zijn. ",

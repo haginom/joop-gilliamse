@@ -22,13 +22,10 @@ export default function Header({ landing }) {
         </div>
       )}
       <Container>
-        <Navbar
-          className="justify-content-space-between mw-60 mx-auto"
-          expand="lg"
-        >
+        <Navbar className="justify-content-space-between" expand="lg">
           <Navbar.Brand>Joop Gilliamse</Navbar.Brand>
           <Navbar.Toggle
-            activeKey={location.pathname}
+            activekey={location.pathname}
             aria-controls="basic-navbar-nav"
           >
             <FontAwesomeIcon icon={faBars} style={{ color: "#fdfcf6" }} />
@@ -70,7 +67,7 @@ export default function Header({ landing }) {
                 >
                   EN
                 </Button>
-                <div class="spacer"></div>
+                <div className="spacer"></div>
                 <Button
                   type="checkbox"
                   className={`${language === "nl" && "active-checkbox"} `}
