@@ -123,7 +123,12 @@ export default function AboutUs({ data }) {
                 </a>
               </td>
               <td>
-                <a className="document" target="_blank" href={beleidsplan}>
+                <a
+                  className="document"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={beleidsplan}
+                >
                   View
                 </a>
               </td>
@@ -143,7 +148,12 @@ export default function AboutUs({ data }) {
                 </a>
               </td>
               <td>
-                <a className="document" target="_blank" href={ggdnader2022}>
+                <a
+                  className="document"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={ggdnader2022}
+                >
                   View
                 </a>
               </td>
@@ -225,7 +235,7 @@ export default function AboutUs({ data }) {
             </tr>
             <tr>
               <td> Inspectie rapport 2020 </td>
-              <td>An inspection from the GGD was done on 09-10-2020</td>
+              <td>An follow up inspection from the GGD was done in 2020</td>
               <td>
                 <a
                   className="document"
@@ -242,7 +252,7 @@ export default function AboutUs({ data }) {
                   className="document"
                   rel="noreferrer"
                   target="_blank"
-                  href={ggd2020}
+                  href={ggdnader2020}
                 >
                   View
                 </a>
@@ -250,7 +260,7 @@ export default function AboutUs({ data }) {
             </tr>
             <tr>
               <td> Inspectie rapport 2019 </td>
-              <td>An inspection from the GGD was done on 09-10-2020</td>
+              <td>An inspection from the GGD was done on 27-09-2019</td>
               <td>
                 <a
                   className="document"

@@ -16,7 +16,7 @@ export default function ReasonsCarousel({ data }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: (
-      <div class="arrow">
+      <div className="arrow">
         <div className="arrow-top"></div>
         <div className="arrow-bottom"></div>
       </div>
