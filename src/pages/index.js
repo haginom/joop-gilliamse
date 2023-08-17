@@ -175,7 +175,7 @@ export const query = graphql`
     }
     binnen: file(relativePath: { eq: "binnen-square.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 400)
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

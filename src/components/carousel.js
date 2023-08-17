@@ -12,7 +12,9 @@ export default function ReasonsCarousel({ data }) {
   const { getTranslation } = useContext(LanguageContext);
   let settings = {
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: (

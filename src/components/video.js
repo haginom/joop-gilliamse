@@ -5,6 +5,8 @@ import Bird from "./bird";
 
 const Video = ({ source }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
   const videoRef = useRef(null);
   const togglePlaystate = () => {
     setIsPlaying(!isPlaying);
@@ -14,6 +16,10 @@ const Video = ({ source }) => {
       videoRef.current.play();
     }
   };
+  const toggleMuted = () => {
+    videoRef.current.muted = !videoRef.current.muted;
+  };
+
   return (
     <Container
       className="video-container"
@@ -41,15 +47,32 @@ const Video = ({ source }) => {
         <div className="pokingBird">
           <Bird color="cls-0" border="cls-01" />
         </div>
-        <div style={{ width: "100%" }}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%", // Ensure the container has a defined height
+            border: " #E6AF2E solid 44px",
+            borderRadius: "92% 8% 91% 9% / 12% 84% 16% 88%",
+            display: "flex", // Use flex display to center the video
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <video
-            style={{
-              border: " #E6AF2E solid 34px",
-              borderRadius: "92% 8% 91% 9% / 12% 84% 16% 88%",
-            }}
+            muted
+            loop
+            autoPlay
             className="w-100 h-100"
             ref={videoRef}
-            onClick={togglePlaystate}
+            onClick={(event) => {
+              togglePlaystate();
+              toggleMuted();
+            }}
+            style={{
+              width: "100%", // Make the video fill the available space
+              height: "100%",
+              objectFit: "cover", // Maintain aspect ratio and cover the container
+            }}
           >
             <source src={source} type="video/mp4" />
             Your browser does not support the video tag.

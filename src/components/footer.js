@@ -5,7 +5,7 @@ export default function Footer({ color, border }) {
   return (
     <footer>
       <a href="https://www.flaticon.com/free-icons/idea" title="idea icons">
-        Idea icons created by Freepik - Flaticon
+        icons created by Freepik, Flaticon
       </a>
       ;
     </footer>

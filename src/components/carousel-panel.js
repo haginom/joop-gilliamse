@@ -22,19 +22,18 @@ export default function CarouselPanel({
           <Col xs={12} md={5} className="reasons-panel-image">
             {image}
             {photo && (
-              <div className="photoBg">
-                <GatsbyImage
-                  alt=""
-                  style={{
-                    maxWidth: "475px",
-                    maxHeight: "450px",
-                    borderRadius: "46% 54% 51% 49%/46% 48% 52% 54%",
-                    boxShadow: "19px 22px 8px 6px rgba(0,0,0,0.1)",
-                  }}
-                  imgStyle={{ width: "100%", height: "100%" }}
-                  image={photo}
-                />
-              </div>
+              <GatsbyImage
+                alt=""
+                className="photoBg"
+                style={{
+                  maxWidth: "475px",
+                  maxHeight: "475px",
+                  borderRadius: "46% 54% 51% 49%/46% 48% 52% 54%",
+                  boxShadow: "19px 22px 8px 6px rgba(0,0,0,0.1)",
+                }}
+                imgStyle={{ width: "100%", height: "100%" }}
+                image={photo}
+              />
             )}
           </Col>
           <Col className="reasons-panel-text" xs={12} md={5} lg={{ offset: 1 }}>
