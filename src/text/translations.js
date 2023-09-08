@@ -113,12 +113,12 @@ export const translations = {
       "Yes. Both parents, where possible, are encouraged to partake in creche life, however it is not also necessary.",
     faqs_four: "Can I apply for toeslag?",
 
-    faqs_four_a: "Is there a minimum age to join?",
+    faqs_four_a: "You are also entitled to apply for childcare allowance because Joop Gilliamse is a fully recognized daycare center (GGD).",
     faqs_five: "When is the creche open?",
     faqs_five_a:
       "The creche is open Monday, Tuesday, Thursday and Friday between 9:00 - 16:00. The Joop Gilliamse uses the same vacation days as a primary school (in North Holland): Please note that the parental contribution will continue to be paid during the holidays (including the summer holidays).",
     faqs_six: "Is the creche inspected?",
-    faqs_six_a: "Is there a minimum age to join?",
+    faqs_six_a: "The Joop Gilliamse parent daycare center is fully recognized by the GGD and is frequently inspected by the fire brigade. All parents have a recent first aid diploma and all have a certificate of good behavior.",
     faqs_seven: "Do I need to be able to speak Dutch?",
     faqs_seven_a: "Communication with the children at the creche is in Dutch.",
     reports: "reports",
